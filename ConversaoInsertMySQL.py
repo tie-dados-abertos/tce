@@ -1,3 +1,4 @@
+
 import os
 
 script_path = "C:/Users/Eudes/Documents/scriptTce"
@@ -7,13 +8,14 @@ def percorrePastaRetornaListaSQL(caminho):
         return "Este caminho não Existe."
     else:
         for diretorio,pasta,listaArquivo in os.walk(caminho):
-            return [caminho+x for x in listaArquivo]
+            return [caminho + "/" + x for x in listaArquivo]
 
 def converteScript(listaScript):
     for script in listaScript:
         arq = open(script, "r+b")
         lista = arq.readlines()
-        print(lista)
+        for i in lista:
+            print(i)
 
 
 converteScript(percorrePastaRetornaListaSQL(script_path))
