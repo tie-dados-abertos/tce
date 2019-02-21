@@ -7,7 +7,7 @@ def percorrePastaRetornaListaSQL(caminho):
         return "Este caminho não Existe."
     else:
         for diretorio,pasta,listaArquivo in os.walk(caminho):
-            return listaArquivo
+            return [caminho+x for x in listaArquivo]
 
 def converteScript(listaScript):
     for script in listaScript:
